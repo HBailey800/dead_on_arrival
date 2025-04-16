@@ -1,0 +1,49 @@
+[gd_scene load_steps=6 format=3 uid="uid://iqg46kk74r8o"]
+
+[ext_resource type="Script" path="res://assets/Scenes/boss_2.gd" id="1_najqd"]
+[ext_resource type="Texture2D" uid="uid://cpyh1a28sbeua" path="res://assets/Sprites/ZOMBIES.png" id="2_nmtj3"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_74wrs"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rgy44"]
+atlas = ExtResource("2_nmtj3")
+region = Rect2(175.963, 45.9098, 23.1579, 20.1436)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5cuyp"]
+size = Vector2(13.6667, 14.375)
+
+[node name="Boss2" type="CharacterBody2D"]
+position = Vector2(244, 0)
+scale = Vector2(5, 5)
+collision_mask = 2
+script = ExtResource("1_najqd")
+metadata/speed = 300
+metadata/health = 200
+metadata/firesProjectile = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(3, 3)
+shape = SubResource("CircleShape2D_74wrs")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 1.5708
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_rgy44")
+
+[node name="Enemy" type="Area2D" parent="."]
+scale = Vector2(1.2, 1.2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy"]
+position = Vector2(2.33333, 0.083333)
+scale = Vector2(4, 4)
+shape = SubResource("RectangleShape2D_5cuyp")
+
+[node name="ShootPoint2" type="Node2D" parent="."]
+position = Vector2(0, 150)
+
+[node name="ShootPoint3" type="Node2D" parent="."]
+position = Vector2(0, -150)
+
+[node name="ShootPoint" type="Node2D" parent="."]
+
+[connection signal="area_entered" from="Enemy" to="." method="_on_enemy_area_entered"]

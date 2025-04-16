@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://kxhhlnpo4i5h"]
+
+[ext_resource type="Script" path="res://assets/Scripts/flame_bullet.gd" id="1_4oggk"]
+[ext_resource type="Texture2D" uid="uid://dqe8gomb1xgjp" path="res://assets/Sprites/New Piskel.png" id="2_4saij"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tahoy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_42w2w"]
+size = Vector2(45.7273, 34.5455)
+
+[node name="FlameBullet" type="RigidBody2D"]
+collision_layer = 2
+gravity_scale = 0.0
+lock_rotation = true
+script = ExtResource("1_4oggk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(1.25, 0.7)
+shape = SubResource("RectangleShape2D_tahoy")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 1.5708
+texture = ExtResource("2_4saij")
+
+[node name="Bullet" type="Area2D" parent="."]
+scale = Vector2(1.1, 1.1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bullet"]
+position = Vector2(-0.136365, -4.33488e-07)
+shape = SubResource("RectangleShape2D_42w2w")
+
+[connection signal="area_entered" from="Bullet" to="." method="_on_bullet_area_entered"]

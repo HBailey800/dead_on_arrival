@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://bn6w75ii43eyu"]
+
+[ext_resource type="Texture2D" uid="uid://bpngsa5a5keai" path="res://assets/Sprites/black-square-png-2.png" id="1_723gv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pn5gi"]
+size = Vector2(6000, 6000)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_2cm1q"]
+polygon = PackedVector2Array(-3000, -3000, -3000, 3000, 3000, 3000, 3000, -3000)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.002, 0.002)
+texture = ExtResource("1_723gv")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/StaticBody2D"]
+position = Vector2(-2.86103e-06, 0.000119209)
+shape = SubResource("RectangleShape2D_pn5gi")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Sprite2D"]
+occluder = SubResource("OccluderPolygon2D_2cm1q")

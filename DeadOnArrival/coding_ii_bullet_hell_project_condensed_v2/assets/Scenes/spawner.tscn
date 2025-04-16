@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://clsut2j7bab18"]
+
+[node name="Spawner" type="Node2D"]
+
+[node name="Node2D5" type="Node2D" parent="."]
+
+[node name="Node2D4" type="Node2D" parent="."]
+
+[node name="Node2D3" type="Node2D" parent="."]
+
+[node name="Node2D2" type="Node2D" parent="."]
+
+[node name="Node2D" type="Node2D" parent="."]
