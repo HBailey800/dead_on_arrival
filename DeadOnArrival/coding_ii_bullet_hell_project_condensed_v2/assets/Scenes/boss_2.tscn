@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://iqg46kk74r8o"]
 
-[ext_resource type="Script" path="res://assets/Scenes/boss_2.gd" id="1_najqd"]
+[ext_resource type="Script" path="res://assets/Scripts/boss_2.gd" id="1_najqd"]
 [ext_resource type="Texture2D" uid="uid://cpyh1a28sbeua" path="res://assets/Sprites/ZOMBIES.png" id="2_nmtj3"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_74wrs"]
