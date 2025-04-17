@@ -5,6 +5,7 @@ In DEAD ON ARRIVAL, you play as a doctor caught in the midst of a zombie-virus o
 To play, just download the file and import it into Godot 4
 
 
+
 Credits & Documentation:
 
 Liam Pruitt - Developer
@@ -20,8 +21,9 @@ Dylan Fraire - Music & Level Design
 Dorian Palomec - Music & Level Design
 
 
+
 Art was made using Piskel
 
-Music was made usign BandLab
+Music was made using BandLab
 
 Game was made using Godot
