@@ -19,7 +19,15 @@ signal Change(changeNum)
 var shootPoint = $ShootPoint
 
 func _ready():
-	pass
+	set_process(true)
+	$"../Camera2D/pause_menu_main".set_visible(false)
+
+
+func _process(delta):
+	if Input.is_action_pressed("quit"):
+		get_tree().paused = true
+		$"../Camera2D/pause_menu_main".set_visible(true)
+		print("paused")
 
 func _physics_process(delta):
 	var motion = Vector2()
