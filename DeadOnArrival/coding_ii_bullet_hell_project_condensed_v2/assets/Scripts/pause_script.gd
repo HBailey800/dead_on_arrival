@@ -23,7 +23,7 @@ func _ready() -> void:
 
 func _unpause():
 	get_tree().paused = false
-	
+	$"../Camera2D/pause_menu_main".set_visible(false)
 	print("unpaused")
 
 func _quit_game():
