@@ -4,6 +4,8 @@ var big_enemy = preload("res://assets//Scenes//big_enemy.tscn")
 var rangedEnemy = preload("res://assets//Scenes//rangedEnemy.tscn")
 var boss1 = preload("res://assets//Scenes//boss_1.tscn")
 var boss2 = preload("res://assets//Scenes//boss_2.tscn")
+var boss3 = preload("res://assets//Scenes//boss_3.tscn")
+var boss4 = preload("res://assets//Scenes//boss_4.tscn")
 var countdownTimer = 1.5
 var enemyNum = 1
 var roundNum = 0
@@ -74,14 +76,21 @@ func Countdown():
 	if(enemyNum == 4):
 		var rng = RandomNumberGenerator.new()
 		rng.randomize()
-		var boss = rng.randi_range(1, 2)
+		var boss = rng.randi_range(1, 3)
 		print(str(boss))
 		var enemy_instance
+		
 		if(boss == 1):
 			enemy_instance = boss1.instantiate()
 			enemyNum = 0
-		else:
+		elif(boss == 2):
 			enemy_instance = boss2.instantiate()
+			enemyNum = 0
+		elif(boss == 3):
+			enemy_instance = boss3.instantiate()
+			enemyNum = 0
+		else:
+			enemy_instance = boss4.instantiate()
 			enemyNum = 0
 		enemy_instance.global_position = Vector2(0, 0)
 		get_tree().get_root().call_deferred("add_child", enemy_instance)
