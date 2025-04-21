@@ -36,7 +36,7 @@ func on_game_over():
 
 func Countdown():
 	var i = 0
-	while(not get_tree().paused == true):
+	if(not get_tree().paused == true):
 		while (i < enemyNum):
 			var rng = RandomNumberGenerator.new()
 			rng.randomize() # Ensure different results each time
