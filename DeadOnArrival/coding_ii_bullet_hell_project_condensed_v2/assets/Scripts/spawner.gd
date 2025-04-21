@@ -36,7 +36,7 @@ func on_game_over():
 
 func Countdown():
 	var i = 0
-	if(not get_tree().paused == true):
+	if(get_tree().paused == false):
 		while (i < enemyNum):
 			var rng = RandomNumberGenerator.new()
 			rng.randomize() # Ensure different results each time
@@ -98,6 +98,9 @@ func Countdown():
 			enemy_instance.IsDead.connect(killPlayer)
 			
 		print("EnemyNum is - " + str(enemyNum))
+		
+	else:
+		await get_tree().create_timer(1).timeout
 	Countdown()
 
 func killPlayer():
